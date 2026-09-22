@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zemzem ❤️</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family: Georgia, "Times New Roman", serif;
+  background:#090508;color:#fff;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,105,150,.18),transparent 28%),
+    radial-gradient(circle at 80% 70%,rgba(255,180,210,.12),transparent 30%),
+    linear-gradient(135deg,#16080f,#090508 55%,#180711);
+}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:5}
+section{min-height:100vh;padding:70px 20px;display:flex;align-items:center;justify-content:center}
+.hero{text-align:center;position:relative}
+.badge{
+  display:inline-block;padding:9px 18px;border:1px solid rgba(255,255,255,.22);
+  border-radius:99px;font:12px Arial;letter-spacing:3px;text-transform:uppercase;
+  color:#ffd7e5;background:rgba(255,255,255,.05);backdrop-filter:blur(8px)
+}
+.hero h1{font-size:clamp(58px,15vw,150px);margin:25px 0 8px;letter-spacing:-4px}
+.hero h1 span{color:#ff8fb5}
+.hero p{font-size:clamp(18px,4vw,28px);color:#e9cbd5;max-width:720px;margin:auto;line-height:1.5}
+.btn{
+  display:inline-block;margin-top:35px;padding:15px 27px;border-radius:50px;
+  color:white;text-decoration:none;background:linear-gradient(135deg,#ff5d91,#b92761);
+  box-shadow:0 10px 40px rgba(255,70,130,.25);font:600 14px Arial;
+}
+.card{
+  width:min(950px,100%);padding:42px;border-radius:30px;
+  background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 25px 80px rgba(0,0,0,.35);backdrop-filter:blur(14px);
+}
+.eyebrow{font:12px Arial;letter-spacing:4px;text-transform:uppercase;color:#ff9abb;margin-bottom:16px}
+h2{font-size:clamp(35px,7vw,65px);margin-bottom:20px}
+.message{font-size:clamp(21px,4vw,32px);line-height:1.6;color:#f7e7ed}
+.quote{font-style:italic}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}
+.gallery img{
+ width:100%;height:460px;object-fit:cover;border-radius:24px;
+ border:1px solid rgba(255,255,255,.15);cursor:pointer;transition:.5s;
+}
+.gallery img:hover{transform:scale(1.02)}
+.timeline{display:grid;gap:16px;margin-top:30px}
+.item{padding:22px;border-left:2px solid #ff719e;background:rgba(255,255,255,.04);border-radius:0 18px 18px 0}
+.item strong{display:block;color:#ff9abb;font:12px Arial;letter-spacing:2px;margin-bottom:7px}
+.final{text-align:center}
+.final .heart{font-size:75px;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{transform:scale(1.13)}}
+footer{padding:25px;text-align:center;color:#9f858f;font:12px Arial}
+@media(max-width:650px){
+ .card{padding:28px 20px}.gallery{grid-template-columns:1fr}
+ .gallery img{height:400px}
+}
+
+/* MÜZİK BUTONU STİLİ */
+#musicButton {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(30,10,20,0.85);
+    color: white;
+    padding: 13px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+#musicButton:hover {
+    transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<!-- MÜZİK ELEMANLARI -->
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" onclick="toggleMusic()">
+    🎵 Müziği Aç
+</button>
+
+<canvas id="canvas"></canvas>
+
+<section class="hero">
+  <div>
+    <div class="badge">01 Ekim 2026 · Kaderimi değiştirecek kadının doğumu ❤️</div>
+    <h1>Zemzem'im<span> ❤️</span></h1>
+    <p>Bu site, hayatımda tek bir kişiye ait olan küçük bir dünya.</p>
+    <a class="btn" href="#hikaye">Dünyamıza gir →</a>
+  </div>
+</section>
+
+<section id="hikaye">
+ <div class="card">
+   <div class="eyebrow">01.08.2026</div>
+   <h2>15:35</h2>
+   <p class="message">Sevgilim…</p>
+   <p class="message quote" style="margin-top:18px">
+   “Sana yazmak istediğim o kadar satır o kadar cümle var ki o tanıştığımız gün.. buluştuğumuz gün.. o güzel ellerin parlayan gözlerin uzaktan gelirken titreyen ellerim ve ayaklarım bunların hiç birisini anlayamazsın çünkü kendinle tanışamayacaksın... ama seninle tanıştığım seninle buluştuğumuz o gün dedim ki içimden Allah'ım nolur bu kızı benim kaderim benim nasibim yap seni bazen üzmelerim bazen bunaltmalarım sadece seni kaybetme korkusuyla yapılan bir şey çünkü sen benim dünyamsın oksijenimsin güneşimsin sensiz üşürüm sensiz kör olurum sensiz nefes alamam...”
+   </p>
+ </div>
+</section>
+
+<section id="hikaye">
+ <div class="card">
+   <div class="eyebrow">19.09.2026 İlk Buluşmamız ❤️</div>
+   <h2>Herşeyim...</h2>
+   <p class="message">Sevgilim…</p>
+   <p class="message quote" style="margin-top:18px">
+   “7 kıtayı gezsem, senden güzel manzara göremezdi gözlerim...”
+   </p>
+ </div>
+</section>
+
+<section>
+ <div class="card">
+   <div class="eyebrow">Bizim</div>
+   <h2>İlk Fotoğraflarımız...</h2>
+   <div class="gallery">
+     <img src="biz1.jpeg" alt="Zemzem ve ben">
+     <img src="biz2.jpeg" alt="Zemzem ve ben">
+     <img src="biz3.jpeg" alt="Zemzem ve ben">
+     <img src="biz4.jpeg" alt="Zemzem ve ben">
+   </div>
+ </div>
+</section>
+
+<section>
+ <div class="card">
+   <div class="eyebrow">Sana</div>
+   <h2>Söylemek istediğim...</h2>
+   <div class="timeline">
+     <div class="item"><strong></strong>Eğer bir lambayı ovuşturup ondan 3 tane dilek hakkım olsaydı yine üçünde de seni dilerdim sevgilim</div>
+     <div class="item"><strong></strong>Gülüşün, güldüğünde ki parlayan o gözlerin ve o kokun...</div>
+     <div class="item"><strong></strong>Ve daha anlatamadığım, bu siteye sığmayacak kadar çok şey...</div>
+   </div>
+ </div>
+</section>
+
+<section class="final">
+ <div>
+   <div class="heart">❤️</div>
+   <div class="eyebrow">01.10.2026</div>
+   <h2>İyi ki doğdun Sevgiliiiiimmmmmmmmmm.</h2>
+   <p class="message">İyi ki hayatımdasın<br><br>Özkürdüm seni çok ama çooooooook seviyorum❤️</p>
+   <a class="btn" href="#hikaye">Başa dön ↑</a>
+ </div>
+</section>
+
+<footer>Senin için hazırlandı · 2026 ❤️</footer>
+
+<script>
+// Kalp Efekti
+const c=document.getElementById("canvas"),ctx=c.getContext("2d");
+let W,H,hearts=[];
+function resize(){W=c.width=innerWidth;H=c.height=innerHeight}
+addEventListener("resize",resize);resize();
+for(let i=0;i<35;i++) hearts.push({x:Math.random()*W,y:Math.random()*H,s:8+Math.random()*14,v:.25+Math.random()*.7,a:Math.random()*.5+.15});
+function draw(){
+ ctx.clearRect(0,0,W,H);
+ hearts.forEach(h=>{
+   h.y-=h.v;if(h.y<-20){h.y=H+20;h.x=Math.random()*W}
+   ctx.globalAlpha=h.a;ctx.fillStyle="#ff91b4";ctx.font=h.s+"px Arial";ctx.fillText("♥",h.x,h.y)
+ });
+ requestAnimationFrame(draw)
+}draw();
+
+// Müzik Çalar Fonksiyonu
+const music = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicButton");
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play();
+        musicButton.innerHTML = "🔊 Müziği Kapat";
+    } else {
+        music.pause();
+        musicButton.innerHTML = "🎵 Müziği Aç";
+    }
+}
+</script>
+</body>
+</html>
